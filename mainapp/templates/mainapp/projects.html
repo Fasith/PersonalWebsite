@@ -1,21 +1,28 @@
 {% extends 'mainapp/base.html' %}
 
-
 {% block content %}
 
-    <h1> This page will hold all your projects</h1>
-
-
-    {% for project in projects_list %}
-        <div>
-            <h4>{{ project.project_title }}</h4>
-            <a href="{{project.project_url}}" target="_blank">See code</a>
-            <p>{{project.id}}</p>
-            <a href="{% url 'mainapp:project_detail' project.id %}">View in detail</a>
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            {% for project in projects_list %}
+                <div class="col-sm-4">
+                    <div class="card " style="margin-bottom: 20px; min-height: 400px;">
+                        <div class="card-header">
+                            {{project.project_title}}
+                        </div>
+                        <img src="{{ project.project_title_image.url }}" class="card-img-top" alt="TEXTED" style="height: 250px; width: auto; ">
+                        <div class="card-body">
+                            <p>{{project.project_description | truncatechars:150}}</p>
+                            <a href="{{project.project_url}}" target="_blank" class="btn btn-primary" >View Code in GitHub</a>
+                            <a href="{% url 'mainapp:project_detail' project.id %}" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        <img src="{{ project.project_title_image.url }}" alt="something is wrong"
-        style="object-fit:contain; width:80%;height:500px; margin: 30px;">
-    {% endfor %}
+        
+            
+    </div>
 
 {% endblock %}
     
