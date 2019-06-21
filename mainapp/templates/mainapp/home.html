@@ -1,1 +1,62 @@
 {% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!--JUMBOTRON OPEN-->
+<div class="jumbotron">
+    <h1 class="display-4">Hello,World!</h1>
+    <p class="lead">Welcome, Have a good day!</p>
+    <hr class="my-4">
+    <p class="lead">This is my personal website that has all my projects.
+        There are also some cool live projects for you guys to check out!
+    </p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+<!-- JUMBOTRON CLOSED-->
+
+
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{% static 'mainapp/profile.jpg' %}"
+             alt="Bad Link" style="max-height: 500px; width:auto;"
+             class="img-fluid">            
+        </div>
+        <div class="col-md-7">
+            <p class="lead"> Hey,thanks for checking out my website. My name is 
+                Fasith. I am an undergrad engineering student.
+                I wrote my first line of code in C++ while i was in high school and i have been 
+                in love with coding ever since
+            </p>
+            <hr>
+            <h4>My Skills:</h4>
+            <h5>Programming Languages</h5>
+            <ul>
+                <li>Python</li>
+                <li>C++</li>
+                <li>HTML/CSS/JS</li>
+            </ul>
+            <hr>
+            <h5>FrameWorks</h5>
+            <ul>
+                <li>Django</li>
+                <li>React</li>
+                <li>Tensorflow</li>
+                <li>Pytorch</li>
+            </ul>
+            <hr>
+            <p class="text-muted">Think Twice, Code Once !</p>
+
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
+{% endblock %}

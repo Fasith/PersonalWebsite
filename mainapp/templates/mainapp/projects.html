@@ -12,9 +12,8 @@
                         </div>
                         <img src="{{ project.project_title_image.url }}" class="card-img-top" alt="TEXTED" style="height: 250px; width: auto; ">
                         <div class="card-body">
-                            <p>{{project.project_description | truncatechars:150}}</p>
-                            <a href="{{project.project_url}}" target="_blank" class="btn btn-primary" >View Code in GitHub</a>
-                            <a href="{% url 'mainapp:project_detail' project.id %}" class="btn btn-primary">More Details</a>
+                            <p>{{project.project_description | truncatechars:500}}</p>
+                            <a href="{{project.project_url}}" target="_blank" class="btn btn-primary" >View Code in GitHub</a>    
                         </div>
                     </div>
                 </div>
