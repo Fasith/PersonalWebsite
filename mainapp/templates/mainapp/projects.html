@@ -1,10 +1,21 @@
-<h1> This page will hold all your projects</h1>
+{% extends 'mainapp/base.html' %}
+
+
+{% block content %}
+
+    <h1> This page will hold all your projects</h1>
 
 
     {% for project in projects_list %}
         <div>
             <h4>{{ project.project_title }}</h4>
             <a href="{{project.project_url}}" target="_blank">See code</a>
+            <p>{{project.id}}</p>
+            <a href="{% url 'mainapp:project_detail' project.id %}">View in detail</a>
         </div>
-        <img src="{{ project.project_title_image.url }}" alt="something is wrong">
+        <img src="{{ project.project_title_image.url }}" alt="something is wrong"
+        style="object-fit:contain; width:80%;height:500px; margin: 30px;">
     {% endfor %}
+
+{% endblock %}
+    
